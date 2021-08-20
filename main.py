@@ -12,6 +12,8 @@ DURATION = 5
 FS = 16000
 text=""
 
+
+
 st.title("Grammar Checker")
 st.subheader("Read the following text in Hindi and translate it to English. "
              "The AI will understand what you have spoken and check you grammar")
@@ -58,7 +60,16 @@ with col3:
         text, *_ = nbests[0]
 
 if len(text)>0:
-    st.write("Transcriptions: ",text)
+    st.markdown("""
+    <style>
+    .big-font {
+        font-size:30px !important;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+    st.markdown('<p class="big-font">'+"You said: "+text+'</p>', unsafe_allow_html=True)
+
+
 
 
 
